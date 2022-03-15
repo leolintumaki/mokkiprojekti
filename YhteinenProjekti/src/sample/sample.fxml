@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TabPane layoutX="-3.0" layoutY="-1.0" prefHeight="573.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Asiakkaat">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="5.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="-1.0" layoutY="-1.0" prefHeight="532.0" prefWidth="1016.0">
+                                            <children>
+                                                <VBox prefHeight="532.0" prefWidth="388.0">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="108.0" text="Lisää asiakkaan tiedot" />
+                                                        <TextField fx:id="as_id" promptText="Asiakas ID" />
+                                                        <TextField fx:id="as_etunimi" promptText="Etunimi" />
+                                                        <TextField fx:id="as_sukunimi" promptText="Sukunimi" />
+                                                        <TextField fx:id="as_lahiOsoite" promptText="Lähiosoite" />
+                                                        <TextField fx:id="as_postiToimiPaikka" promptText="Postioimipaikka" />
+                                                        <TextField fx:id="as_postiNumero" promptText="Postinumero" />
+                                                        <TextField fx:id="as_email" promptText="Sähköposti" />
+                                                        <TextField fx:id="as_puhelinNro" promptText="Puhelinnumero" />
+                                                        <Button fx:id="btnAddAsiakas" mnemonicParsing="false" onAction="#insertAsiakas" prefHeight="25.0" prefWidth="280.0" text="Lisää asiakas" />
+                                                        <Button fx:id="btnDelAsiakas" mnemonicParsing="false" onAction="#deleteAsiakas" prefHeight="25.0" prefWidth="280.0" text="Poista asiakas" />
+                                                        <Button fx:id="btnUpdAsiakas" mnemonicParsing="false" onAction="#updateAsiakas" prefHeight="25.0" prefWidth="279.0" text="Muokkaa tietoja" />
+                                                        <Button fx:id="btnListAsiakas" mnemonicParsing="false" onAction="#etsiAsiakkaat" prefHeight="25.0" prefWidth="279.0" text="Päivitä lista" />
+                                                        <Label prefHeight="17.0" prefWidth="99.0" text="Konsoli" />
+                                                        <TextArea fx:id="as_konsoli" prefHeight="142.0" prefWidth="214.0" />
+                                                    </children>
+                                                </VBox>
+                                                <TableView fx:id="asiakasTaulu" prefHeight="532.0" prefWidth="946.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="as_idColumn" prefWidth="63.0" text="Asiakas ID" />
+                                                        <TableColumn fx:id="as_etunimiColumn" prefWidth="87.0" text="Etunimi" />
+                                                        <TableColumn fx:id="as_sukunimiColumn" prefWidth="89.0" text="Sukunimi" />
+                                                        <TableColumn fx:id="as_lahiOsoiteColumn" prefWidth="90.0" text="Lähiosoite" />
+                                                        <TableColumn fx:id="as_postiToimiPaikkaColumn" prefWidth="120.0" text="Postitoimipaikka" />
+                                                        <TableColumn fx:id="as_postiNumeroColumn" prefWidth="107.0" text="Postinumero" />
+                                                        <TableColumn fx:id="as_emailColumn" prefWidth="107.0" text="Email" />
+                                                        <TableColumn fx:id="as_puhelinNroColumn" prefWidth="123.0" text="Puhelinumero" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Mökki">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="257.0" layoutY="-1.0" prefHeight="532.0" prefWidth="758.0">
+                                            <children>
+                                                <TableView fx:id="toimipisteTaulu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="759.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tp_idColumn" prefWidth="129.0" text="Mökki ID" />
+                                                        <TableColumn fx:id="tp_NimiColumn" prefWidth="119.0" text="Toiminta alue ID" />
+                                                        <TableColumn fx:id="tp_LahiOsoiteColumn" prefWidth="82.0" text="Postinumero" />
+                                                        <TableColumn fx:id="tp_PostiToimiPaikkaColumn" prefWidth="69.0" text="Mökkinimi" />
+                                                        <TableColumn fx:id="tp_PostinroColumn" minWidth="0.0" prefWidth="70.0" text="Katuosoite" />
+                                                        <TableColumn fx:id="tp_EmailColumn" minWidth="0.0" prefWidth="50.0" text="Kuvaus" />
+                                                        <TableColumn fx:id="tp_PuhelinnroColumn" minWidth="0.0" prefWidth="87.0" text="Henkilömäärä" />
+                                          <TableColumn fx:id="tp_varusteluColumn" prefWidth="63.0" text="Varustelu" />
+                                          <TableColumn fx:id="tp_hintaColumn" prefWidth="89.0" text="Hinta" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="533.0" prefWidth="259.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="127.0" text="Lisää toimipaikan tiedot" />
+                                                <TextField fx:id="tp_id" promptText="Mökki ID" />
+                                                <TextField fx:id="tp_Nimi" promptText="Toiminta alue ID" />
+                                                <TextField fx:id="tp_lahiOsoite" promptText="Postinumero" />
+                                                <TextField fx:id="tp_PostiToimiPaikka" promptText="Mökkinimi" />
+                                                <TextField fx:id="tp_Postinro" promptText="Katuosoite" />
+                                                <TextField fx:id="tp_Email" promptText="Kuvaus" />
+                                                <TextField fx:id="tp_Puhelinnro" promptText="Henkilömäärä" />
+                                    <TextField fx:id="tp_varustelu" promptText="Varustelu" />
+                                    <TextField fx:id="tp_hinta" promptText="Hinta" />
+                                                <Button fx:id="btnAddToimipiste" mnemonicParsing="false" onAction="#insertToimipiste" prefHeight="25.0" prefWidth="263.0" text="Lisää toimipaikka" />
+                                                <Button fx:id="btnDelToimipiste" mnemonicParsing="false" onAction="#deleteToimipiste" prefHeight="25.0" prefWidth="266.0" text="Poista toimipaikka" />
+                                                <Button fx:id="btnUpdToimipiste" mnemonicParsing="false" onAction="#updateToimipiste" prefHeight="25.0" prefWidth="263.0" text="Muokkaa tietoja" />
+                                                <Button fx:id="btnListToimipiste" mnemonicParsing="false" onAction="#etsiToimipisteet" prefHeight="25.0" prefWidth="258.0" text="Päivitä lista" />
+                                                <Label prefHeight="17.0" prefWidth="256.0" text="Konsoli" />
+                                                <TextArea fx:id="tp_konsoli" prefHeight="223.0" prefWidth="259.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+
+                    </content>
+                </Tab>
+                <Tab text="Varaukset">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="257.0" layoutY="-1.0" prefHeight="532.0" prefWidth="758.0">
+                                            <children>
+                                                <TableView fx:id="varausTaulu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="759.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="va_idColumn" prefWidth="124.0" text="Varaus ID" />
+                                                        <TableColumn fx:id="va_asidColumn" prefWidth="96.0" text="Asiakas ID" />
+                                                        <TableColumn fx:id="va_tpidColumn" prefWidth="75.0" text="Mökki ID" />
+                                                        <TableColumn fx:id="va_varPvmColumn" prefWidth="138.0" text="Varaus päivä" />
+                                                        <TableColumn fx:id="va_vahvPvmColumn" minWidth="0.0" prefWidth="111.0" text="Vahvistamis päivä" />
+                                                        <TableColumn fx:id="va_varAlkuColumn" minWidth="0.0" prefWidth="114.0" text="Varauksen alkaminen" />
+                                                        <TableColumn fx:id="va_varLoppuColumn" minWidth="0.0" prefWidth="99.0" text="Varauksen loppuminen" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="533.0" prefWidth="259.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="127.0" text="Lisää varauksen tiedot" />
+                                                <TextField fx:id="va_id" promptText="Varaus ID" />
+                                                <TextField fx:id="va_asid" promptText="Asiakas ID" />
+                                                <TextField fx:id="va_tpid" promptText="Mökki ID" />
+                                                <TextField fx:id="va_varPvm" promptText="Varaus päivä" />
+                                                <TextField fx:id="va_vahvPvm" promptText="Vahvistamis päivä" />
+                                                <TextField fx:id="va_varAlku" promptText="Varauksen alkaminen" />
+                                                <TextField fx:id="va_varLoppu" promptText="Varauksen loppuminen" />
+                                                <Button fx:id="btnAddVaraus" mnemonicParsing="false" onAction="#insertVaraus" prefHeight="25.0" prefWidth="263.0" text="Lisää varaus" />
+                                                <Button fx:id="btnDelVaraus" mnemonicParsing="false" onAction="#deleteVaraus" prefHeight="25.0" prefWidth="266.0" text="Poista varaus" />
+                                                <Button fx:id="btnUpdVaraus" mnemonicParsing="false" onAction="#updateVaraus" prefHeight="25.0" prefWidth="263.0" text="Muokkaa tietoja" />
+                                                <Button fx:id="btnListVaraus" mnemonicParsing="false" onAction="#etsiVaraukset" prefHeight="25.0" prefWidth="258.0" text="Päivitä lista" />
+                                                <Label prefHeight="17.0" prefWidth="256.0" text="Konsoli" />
+                                                <TextArea fx:id="va_konsoli" prefHeight="223.0" prefWidth="259.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Palvelut">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="257.0" layoutY="-1.0" prefHeight="532.0" prefWidth="758.0">
+                                            <children>
+                                                <TableView fx:id="palveluTaulu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="759.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="pa_idColumn" prefWidth="124.0" text="Palvelu ID" />
+                                                        <TableColumn fx:id="pa_tpidColumn" prefWidth="151.0" text="Toimipiste ID" />
+                                                        <TableColumn fx:id="pa_nimiColumn" prefWidth="126.0" text="Nimi" />
+                                                        <TableColumn fx:id="pa_tyyppiColumn" minWidth="0.0" prefWidth="73.0" text="Tyyppi" />
+                                                        <TableColumn fx:id="pa_kuvausColumn" minWidth="0.0" text="Kuvaus" />
+                                                        <TableColumn fx:id="pa_hintaColumn" minWidth="0.0" prefWidth="105.0" text="Hinta" />
+                                          <TableColumn fx:id="pa_alvColumn" prefWidth="99.0" text="Alv" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="533.0" prefWidth="259.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="127.0" text="Lisää palvelun tiedot" />
+                                                <TextField fx:id="pa_id" promptText="Palvelu ID" />
+                                                <TextField fx:id="pa_tpid" promptText="Toimipiste ID" />
+                                                <TextField fx:id="pa_nimi" promptText="Nimi" />
+                                                <TextField fx:id="pa_tyyppi" promptText="Tyyppi" />
+                                                <TextField fx:id="pa_kuvaus" promptText="Kuvaus" />
+                                                <TextField fx:id="pa_hinta" promptText="Hinta" />
+                                    <TextField fx:id="pa_alv" promptText="Alv" />
+                                                <Button fx:id="btnAddPalvelu" mnemonicParsing="false" onAction="#insertPalvelu" prefHeight="25.0" prefWidth="263.0" text="Lisää palvelu" />
+                                                <Button fx:id="btnDelPalvelu" mnemonicParsing="false" onAction="#deletePalvelu" prefHeight="25.0" prefWidth="266.0" text="Poista palvelu" />
+                                                <Button fx:id="btnUpdPalvelu" mnemonicParsing="false" onAction="#updatePalvelu" prefHeight="25.0" prefWidth="263.0" text="Muokkaa tietoja" />
+                                                <Button fx:id="btnListPalvelu" mnemonicParsing="false" onAction="#etsiPalvelut" prefHeight="25.0" prefWidth="258.0" text="Päivitä lista" />
+                                                <Label prefHeight="17.0" prefWidth="256.0" text="Konsoli" />
+                                                <TextArea fx:id="pa_konsoli" prefHeight="223.0" prefWidth="259.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Varausten palvelut">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="257.0" layoutY="-1.0" prefHeight="532.0" prefWidth="758.0">
+                                            <children>
+                                                <TableView fx:id="vpTaulu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="759.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="vp_varaus_idColumn" prefWidth="240.0" text="Varaus ID" />
+                                                        <TableColumn fx:id="vp_palvelu_idColumn" prefWidth="265.0" text="Palvelu ID" />
+                                                        <TableColumn fx:id="vp_lkmColumn" prefWidth="253.0" text="Palveluiden määrä" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="533.0" prefWidth="259.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="127.0" text="Lisää palvelun tiedot" />
+                                                <TextField fx:id="vp_varaus_id" promptText="Varaus ID" />
+                                                <TextField fx:id="vp_palvelu_id" promptText="Palvelu ID" />
+                                                <TextField fx:id="vp_lkm" promptText="Palveluiden määrä" />
+                                                <Button fx:id="btnAddvp" mnemonicParsing="false" onAction="#insertVp" prefHeight="25.0" prefWidth="263.0" text="Lisää varaus" />
+                                                <Button fx:id="btnDelvp" mnemonicParsing="false" onAction="#deleteVP" prefHeight="25.0" prefWidth="266.0" text="Poista varaus" />
+                                                <Button fx:id="btnUpdvp" mnemonicParsing="false" onAction="#updateVp" prefHeight="25.0" prefWidth="263.0" text="Muokkaa tietoja" />
+                                                <Button fx:id="btnListvp" mnemonicParsing="false" onAction="#etsiVarPalv" prefHeight="25.0" prefWidth="258.0" text="Päivitä lista" />
+                                                <Label prefHeight="17.0" prefWidth="256.0" text="Konsoli" />
+                                                <TextArea fx:id="vp_konsoli" prefHeight="324.0" prefWidth="259.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Laskut">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="5.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="-1.0" layoutY="-1.0" prefHeight="532.0" prefWidth="1016.0">
+                                            <children>
+                                                <VBox prefHeight="532.0" prefWidth="388.0">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="108.0" text="Lisää asiakkaan tiedot" />
+                                                        <TextField fx:id="lasku_id" promptText="Lasku ID" />
+                                                        <TextField fx:id="la_varaus_id" promptText="Varaus ID" />
+                                                        <TextField fx:id="la_summa" promptText="Summa" />
+                                          <TextField fx:id="la_alv" promptText="Alv" />
+                                                        <Button fx:id="btnAddLasku" mnemonicParsing="false" onAction="#insertLasku" prefHeight="25.0" prefWidth="280.0" text="Lisää lasku" />
+                                                        <Button fx:id="btnDelLasku" mnemonicParsing="false" onAction="#deleteLasku" prefHeight="25.0" prefWidth="280.0" text="Poista lasku" />
+                                                        <Button fx:id="btnUpdLasku" mnemonicParsing="false" onAction="#updateLasku" prefHeight="25.0" prefWidth="279.0" text="Muokkaa tietoja" />
+                                                        <Button fx:id="btnListLasku" mnemonicParsing="false" onAction="#etsiLaskut" prefHeight="25.0" prefWidth="279.0" text="Päivitä lista" />
+                                                        <Label prefHeight="17.0" prefWidth="99.0" text="Konsoli" />
+                                                        <TextArea fx:id="la_konsoli" prefHeight="198.0" prefWidth="135.0" />
+                                                    </children>
+                                                </VBox>
+                                                <TableView fx:id="laskuTaulu" prefHeight="532.0" prefWidth="946.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="lasku_idColumn" prefWidth="75.0" text="Lasku ID" />
+                                                        <TableColumn fx:id="la_varaus_idColumn" prefWidth="75.0" text="Varaus ID" />
+                                                        <TableColumn fx:id="la_summaColumn" prefWidth="135.0" text="Summa" />
+                                          <TableColumn fx:id="la_alvColumn" prefWidth="75.0" text="Alv" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="ToimintaAlue">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="5.0" layoutY="7.0" prefHeight="530.0" prefWidth="1014.0">
+                                    <children>
+                                        <HBox layoutX="1.0" layoutY="-5.0" prefHeight="536.0" prefWidth="1014.0">
+                                            <children>
+                                                <VBox prefHeight="532.0" prefWidth="388.0">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="108.0" text="Lisää toiminta-alueen tiedot" />
+                                                        <TextField fx:id="ta_id" promptText="ToimintaAlue ID" />
+                                                        <TextField fx:id="ta_nimi" promptText="Nimi" />
+                                                        <Button fx:id="btnAddToimintaAlue" mnemonicParsing="false" onAction="#insertToimintaAlue" prefHeight="25.0" prefWidth="280.0" text="Lisää toimintaAlue" />
+                                                        <Button fx:id="btnDelToimintaAlue" mnemonicParsing="false" onAction="#deleteToimintaAlue" prefHeight="25.0" prefWidth="280.0" text="Poista toimintaAlue" />
+                                                        <Button fx:id="btnUpdToimintaAlue" mnemonicParsing="false" onAction="#updateToimintaAlue" prefHeight="25.0" prefWidth="279.0" text="Muokkaa toimintaAlue" />
+                                                        <Button fx:id="btnListToimintaAlue" mnemonicParsing="false" onAction="#etsiToimintaAlueet" prefHeight="25.0" prefWidth="279.0" text="Päivitä toimintaAlue" />
+                                                        <Label prefHeight="17.0" prefWidth="99.0" text="Konsoli" />
+                                                        <TextArea fx:id="ta_konsoli" prefHeight="198.0" prefWidth="135.0" />
+                                                    </children>
+                                                </VBox>
+                                                <TableView fx:id="toimintaAlueTaulu" prefHeight="532.0" prefWidth="946.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="ta_idColumn" prefWidth="193.0" text="ToimintaAlue ID" />
+                                                        <TableColumn fx:id="ta_nimiColumn" prefWidth="246.0" text="Nimi" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
